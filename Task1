@@ -1,0 +1,48 @@
+def chatbot():
+    print("Chatbot: Hello! Type 'bye' to exit.")
+
+    while True:
+        user_input = input("You: ").lower()
+
+        if user_input in ["hi", "hello", "hey"]:
+            print("Chatbot: Hello! How can I help you?")
+        
+        elif "your name" in user_input:
+            print("Chatbot: I am a rule-based chatbot.")
+        
+        elif "how are you" in user_input:
+            print("Chatbot: I'm doing great! Thanks for asking \n How's your day going?.")
+        
+        elif "help" in user_input:
+            print("Chatbot: I can answer simple questions, like about my name or just say hello.")
+
+        elif "time" in user_input or "date" in user_input: # <--- New Logic
+            from datetime import datetime
+            now = datetime.now()
+            current_time = now.strftime("%A, %B %d, %Y at %I:%M %p")
+            print(f"Chatbot: The current time and date is {current_time}")
+
+        elif "i'm doing internship at codsoft" in user_input:
+            print("Chatbot: That's awesome!")
+
+        elif "about codsoft" in user_input:
+            print("Chatbot: CodSoft is a company that provides internships and training programs in software development. ")
+
+        elif "good" in user_input:
+            print("Chatbot: that's sounds great.")
+
+        elif "what are you doing" in user_input:
+            print("Chatbot: I'm just here,ready to chat with you! What's on your mind.")
+
+        elif "thanks" in user_input:
+            print("Chatbot: You're welcome! ")
+
+        elif user_input == "bye":
+            print("Chatbot: Goodbye! Have a nice day ")
+            break
+        
+        else:
+            print("Chatbot: Sorry, I didn't understand that.")
+
+# Run the chatbot
+chatbot()
